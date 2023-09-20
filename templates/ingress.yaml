@@ -5,7 +5,7 @@ metadata:
   namespace: solar-system
 spec:
   rules:
-  - host: test.aspiresoftware.dev
+  - host: istio.aspiresoftware.dev
     http:
       paths:
       - path: /
