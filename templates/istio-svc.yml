@@ -34,6 +34,6 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: solar-system
+            name: solar-system-service
             port:
               number: 80
