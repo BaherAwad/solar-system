@@ -49,8 +49,10 @@ kind: VirtualService
 metadata:
    name: vs-solar
 spec:
-  gateways: solar-system-gateway
-  hosts: istio.aspiresoftware.dev
+  gateways: 
+    - solar-system-gateway
+  hosts: 
+    - istio.aspiresoftware.dev
   http:
   - match:
     - uri:
