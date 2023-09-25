@@ -47,10 +47,8 @@
 apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
 spec:
-  gateways:
-  - solar-system-gateway
-  hosts:
-  - istio.aspiresoftware.dev
+  gateways: solar-system-gateway
+  hosts: istio.aspiresoftware.dev
   http:
   - match:
     - uri:

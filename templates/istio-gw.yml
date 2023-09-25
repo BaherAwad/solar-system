@@ -4,10 +4,8 @@ metadata:
   name: solar-system-gateway
 spec:
   servers:
-  - hosts:
-      - istio.aspiresoftware.dev
+  - hosts: istio.aspiresoftware.dev
   - port:
       number: 80
-      name: http
       protocol: HTTP
     
