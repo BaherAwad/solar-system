@@ -1,12 +1,25 @@
+# apiVersion: networking.istio.io/v1alpha3
+# kind: Gateway
+# metadata:
+#   name: solar-system-gateway
+# spec:
+#   servers:
+#   - hosts:
+#       - "*"
+#   - port:
+#       number: 80
+#       name: http
+#       protocol: HTTP
+
 apiVersion: networking.istio.io/v1alpha3
 kind: Gateway
 metadata:
   name: solar-system-gateway
 spec:
   servers:
-  - hosts:
-      - "*"
   - port:
       number: 80
       name: http
       protocol: HTTP
+    hosts:
+    - istio.aspiresoftware.dev
