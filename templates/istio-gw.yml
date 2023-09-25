@@ -1,18 +1,13 @@
-# apiVersion: networking.istio.io/v1alpha3
-# kind: Gateway
-# metadata:
-#   name: solar-system
-#   namespace: solar-system
-# spec:
-#   selector:
-#     app: my-gateway-controller
-#   servers:
-#   - port:
-#       number: 443
-#       name: https
-#       protocol: HTTPS
-#     hosts:
-#     - ext-host.example.com
-#     tls:
-#       mode: SIMPLE
-#       credentialName: ext-host-cert
+apiVersion: networking.istio.io/v1alpha3
+kind: Gateway
+metadata:
+  name: solar-system-gateway
+spec:
+  servers:
+  - hosts:
+      - istio.aspiresoftware.dev
+  - port:
+      number: 80
+      name: http
+      protocol: HTTP
+    
