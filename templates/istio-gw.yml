@@ -14,7 +14,8 @@
 apiVersion: networking.istio.io/v1alpha3
 kind: Gateway
 metadata:
-  name: solar-system-gateway
+  name: solar-system-
+  namespace: istio-ingress
 spec:
   selector:
     #istio: ingressgateway
@@ -27,4 +28,25 @@ spec:
       name: http
       protocol: HTTP
     hosts:
-    - "istio.aspiresoftware.dev"
+    - "*"
+
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: istio-ingress
+  name: ingress
+  namespace: solar-system
+spec:
+  rules:
+  - host: istio.aspiresoftware.dev
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: solar-system-service
+            port:
+              number: 80
