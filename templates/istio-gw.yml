@@ -17,7 +17,6 @@ metadata:
   name: solar-system-gateway
 spec:
   selector:
-    app: solar-system
     app: istio-ingress
     istio: ingress
   servers:
