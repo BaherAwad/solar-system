@@ -61,26 +61,25 @@ spec:
     - destination:
         port:
           number: 80
-        host: solar-system-service
-        #.solar-system.svc.cluster.local
+        host: solar-system-service.solar-system.svc.cluster.local
 
----
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  annotations:
-    kubernetes.io/ingress.class: alb
-  name: ingress
-  namespace: solar-system
-spec:
-  rules:
-  - host: istio.aspiresoftware.dev
-    http:
-      paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: solar-system-service
-            port:
-              number: 80
+# ---
+# apiVersion: networking.k8s.io/v1
+# kind: Ingress
+# metadata:
+#   annotations:
+#     kubernetes.io/ingress.class: alb
+#   name: ingress
+#   namespace: solar-system
+# spec:
+#   rules:
+#   - host: istio.aspiresoftware.dev
+#     http:
+#       paths:
+#       - path: /
+#         pathType: Prefix
+#         backend:
+#           service:
+#             name: solar-system-service
+#             port:
+#               number: 80
