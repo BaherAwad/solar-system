@@ -17,8 +17,8 @@ metadata:
   name: solar-system-gateway
 spec:
   selector:
-    app: istio-ingress
-    istio: ingress
+    istio: ingressgateway
+    app: istio-ingressgateway
   servers:
   - port:
       number: 80
