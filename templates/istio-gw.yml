@@ -16,6 +16,8 @@ kind: Gateway
 metadata:
   name: solar-system-gateway
 spec:
+  selector:
+    istio: ingress
   servers:
   - port:
       number: 80
