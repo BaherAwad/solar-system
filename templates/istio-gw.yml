@@ -32,6 +32,13 @@ spec:
 
 ---
 apiVersion: networking.k8s.io/v1
+kind: IngressClass
+metadata:
+  name: istio
+  namespace: istio-ingress
+controller: istio/ingress-controller
+---
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   annotations:
