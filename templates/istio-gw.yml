@@ -18,6 +18,8 @@ metadata:
 spec:
   selector:
     app: solar-system
+    app: istio-ingress
+    istio: ingress
   servers:
   - port:
       number: 80
