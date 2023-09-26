@@ -52,11 +52,13 @@ spec:
   gateways: 
     - solar-system-gateway
   hosts: 
-    - istio.aspiresoftware.dev
+    - "istio.aspiresoftware.dev"
   http:
   - match:
     - uri:
         prefix: /
     route:
     - destination:
+        port:
+          number: 80
         host: solar-system-service.solar-system.svc.cluster.local
