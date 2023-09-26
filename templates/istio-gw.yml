@@ -46,6 +46,7 @@ metadata:
   name: ingress
   namespace: solar-system
 spec:
+  ingressClassName: istio
   rules:
   - host: istio.aspiresoftware.dev
     http:
