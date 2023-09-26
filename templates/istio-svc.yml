@@ -61,4 +61,5 @@ spec:
     - destination:
         port:
           number: 80
-        host: solar-system-service.solar-system.svc.cluster.local
+        host: solar-system-service
+        #.solar-system.svc.cluster.local
