@@ -2,7 +2,8 @@ apiVersion: networking.istio.io/v1alpha3
 kind: Gateway
 metadata:
   name: solar-gateway
-  namespace: istio-ingress
+  namespace: solar-system
+  #namespace: istio-ingress
 spec:
   # The selector matches the ingress gateway pod labels.
   # If you installed Istio using Helm following the standard documentation, this would be "istio=ingress"
@@ -14,7 +15,7 @@ spec:
       name: http
       protocol: HTTP
     hosts:
-    - "*"
+    - "istio.aspiresoftware.dev"
 ---
 apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
@@ -23,7 +24,7 @@ metadata:
   namespace: solar-system
 spec:
   hosts:
-  - "*"
+  - "istio.aspiresoftware.dev"
   gateways:
   - istio-ingress/solar-gateway
   http:
