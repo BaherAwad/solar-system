@@ -23,7 +23,7 @@ metadata:
   namespace: solar-system
 spec:
   hosts:
-  - "istio.aspiresoftware.dev"
+  - "*"
   gateways:
   - istio-ingress/solar-gateway
   http:
