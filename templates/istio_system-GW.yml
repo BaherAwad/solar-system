@@ -26,7 +26,7 @@ spec:
   hosts:
   - "istio.aspiresoftware.dev"
   gateways:
-  - istio-ingress/solar-gateway
+  - solar-gateway
   http:
   - match:
     - uri:
