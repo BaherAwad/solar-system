@@ -2,7 +2,7 @@ apiVersion: networking.istio.io/v1alpha3
 kind: Gateway
 metadata:
   name: solar-gateway
-  namespace: solar-system
+  namespace: istio-system
   #namespace: istio-ingress
 spec:
   # The selector matches the ingress gateway pod labels.
@@ -22,7 +22,7 @@ apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
 metadata:
   name: solar-vsvc
-  namespace: solar-system
+  namespace: istio-system
 spec:
   hosts:
   - "istio.aspiresoftware.dev"
@@ -34,6 +34,6 @@ spec:
         prefix: /
     route:
     - destination:
-        host: solar-system-service
+        host: solar-system-service.solar-system.svc.cluster.local
         port:
           number: 80
