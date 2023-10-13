@@ -14,5 +14,5 @@ spec:
     route:
     - destination:
         host: solar-system-service 
-        port:
-          number: 80
+        #port:
+        #  number: 80
