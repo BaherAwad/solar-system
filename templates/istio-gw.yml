@@ -1,58 +1,22 @@
-# apiVersion: networking.istio.io/v1alpha3
-# kind: Gateway
-# metadata:
-#   name: solar-system-gateway
-# spec:
-#   servers:
-#   - hosts:
-#       - "*"
-#   - port:
-#       number: 80
-#       name: http
-#       protocol: HTTP
-
-# apiVersion: networking.istio.io/v1alpha3
-# kind: Gateway
-# metadata:
-#   name: solar-system
-#   namespace: istio-ingress
-# spec:
-#   selector:
-#     #istio: ingressgateway
-#     #app: istio-ingressgateway
-#     app: istio-ingress
-#     istio: ingress
-#   servers:
-#   - port:
-#       number: 80
-#       name: http
-#       protocol: HTTP
-#     hosts:
-#     - "*"
-
-# ---
-# apiVersion: networking.k8s.io/v1
-# kind: IngressClass
-# metadata:
-#   name: istio
-#   namespace: istio-ingress
-# controller: istio/ingress-controller
-# ---
-# apiVersion: networking.k8s.io/v1
-# kind: Ingress
-# metadata:
-#   name: ingress
-#   namespace: solar-system
-# spec:
-#   ingressClassName: istio
-#   rules:
-#   - host: istio.aspiresoftware.dev
-#     http:
-#       paths:
-#       - path: /
-#         pathType: Prefix
-#         backend:
-#           service:
-#             name: solar-system-service
-#             port:
-#               number: 80
+apiVersion: networking.istio.io/v1alpha3
+kind: Gateway
+metadata:
+  name: solar-gateway
+spec:
+  selector:
+    istio: ingress
+  servers:
+  - port:
+      number: 80
+      name: http
+      protocol: HTTP
+    hosts:
+    - "istio.aspiresoftware.dev"
+    tls:
+      httpsRedirect: true # sends 301 redirect for http requests
+  - port:
+      number: 443
+      name: https-443
+      protocol: HTTP
+    hosts:
+    - "istio.aspiresoftware.dev"
