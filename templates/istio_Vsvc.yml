@@ -19,13 +19,11 @@ spec:
   hosts:
   - "*"
   http:
-  - name: "reviews-v2-routes"
-    match:
+  - match:
     - uri:
-        prefix: "/"
-    - destination:
-        host: solar-system-service
-  - name: "reviews-v1-route"
+        prefix: /
     route:
     - destination:
+        port:
+          number: 80
         host: solar-system-service
