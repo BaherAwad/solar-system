@@ -18,6 +18,8 @@ metadata:
 spec:
   hosts:
   - "*"
+  gateways:
+  - solar-gateway
   http:
   - match:
     - uri:
